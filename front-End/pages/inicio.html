@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uniclass (Sistemas de Chamados)</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./front-End/styles/index.css">
-    <script src="./front-End/scripts/proteger-pagina.js"></script>
+    <link rel="stylesheet" href="../styles/inicio.css">
+    <script src="../scripts/proteger-pagina.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <a href="#" class="nav-logo">UniClass</a>
+            
             <ul class="nav-menu">
+                <li class="nav-pag"><a href="gerenciar-admin.html">Gerenciamento (admin)</a></li>
                 <li class="nav-sub-item">
                     <a href="#" class="nav-chamados">Chamados <i class='bx bx-chevron-down arrow-down'></i></a>
                     <ul class="nav-submenu">
-                        <li class="nav-sub-chamados"><a href="./front-End/pages/abertura-chamado.html">Abrir Chamado</a></li>
-                        <li class="nav-sub-chamados"><a href="./front-End/pages/acompanhar-chamados.html">Acompanhar Chamados</a></li>
+                        <li class="nav-sub-chamados"><a href="abertura-chamado.html">Abrir Chamado</a></li>
+                        <li class="nav-sub-chamados"><a href="acompanhar-chamados.html">Acompanhar Chamados</a></li>
                     </ul>
                 </li>
-                <li class="nav-pag"><a href="./front-End/pages/sobre-nos.html">Sobre Nós</a></li>
-                <li class="nav-pag"><a href="./front-End/pages/ajuda.html">Ajuda</a></li>
+                <li class="nav-pag"><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li class="nav-pag"><a href="ajuda.html">Ajuda</a></li>
                 <li class="nav-pag"><a href="#" id="logout-link">Sair</a></li>
             </ul>
         </nav>
@@ -34,11 +36,11 @@
             <p>Aqui em nosso site, você pode abrir e acompanhar seus chamados com tema educacional.</p>
             <div class="botoes">
                 <div class="botao">
-                    <a href="./front-End/pages/abertura-chamado.html">Abrir Novo Chamado</a>
+                    <a href="abertura-chamado.html">Abrir Novo Chamado</a>
                     <p>Fale e desenvolva sobre seu problema</p>
                 </div>
                 <div class="botao">
-                    <a href="./front-End/pages/acompanhar-chamados.html">Meus Chamados</a>
+                    <a href="acompanhar-chamados.html">Meus Chamados</a>
                     <p>Verifique o status dos seus chamados</p>
                 </div>
             </div>
@@ -49,10 +51,10 @@
         <div id="footer-conteudo">
             <ul class="footer-lista">
                 <li><a href="#" class="footer-link">Inicio</a></li>
-                <li><a href="./front-End/pages/abertura-chamado.html" class="footer-link">Abrir Chamado</a></li>
-                <li><a href="./front-End/pages/acompanhar-chamados.html" class="footer-link">Acompanhar Chamados</a></li>
-                <li><a href="./front-End/pages/ajuda.html" class="footer-link">Ajuda</a></li>
-                <li><a href="./front-End/pages/sobre-nos.html" class="footer-link">Sobre nós</a></li>
+                <li><a href="abertura-chamado.html" class="footer-link">Abrir Chamado</a></li>
+                <li><a href="acompanhar-chamados.html" class="footer-link">Acompanhar Chamados</a></li>
+                <li><a href="ajuda.html" class="footer-link">Ajuda</a></li>
+                <li><a href="sobre-nos.html" class="footer-link">Sobre nós</a></li>
             </ul>
         </div>
         <div id="footer-copyright">
@@ -62,6 +64,6 @@
         </div>
     </footer>
 
-    <script src="./front-End/scripts/logout.js"></script>
+    <script src="../scripts/logout.js"></script>
 </body>
 </html>

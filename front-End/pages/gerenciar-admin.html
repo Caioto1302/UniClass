@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acompanhar Chamados</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../styles/acompanhar-chamados.css">
-    <script src="../scripts/proteger-pagina.js"></script>
+    <title>Gerenciamento de chamados</title>
+    <link rel="stylesheet" href="../styles/gerenciar-admin.css">
+    <script src="../scripts/proteger-admin.js"></script>
 </head>
 <body>
-   <header>
+    <header>
         <nav class="navbar">
             <a href="inicio.html" class="nav-logo">UniClass</a>
-
             <ul class="nav-menu">
-                <li class="nav-pag"><a href="gerenciar-admin.html">Gerenciamento (admin)</a></li>
+                <li class="nav-pag"><a href="#">Gerenciamento (admin)</a></li>
                 <li class="nav-sub-item">
                     <a href="#" class="nav-chamados">Chamados <i class='bx bx-chevron-down arrow-down'></i></a>
                     <ul class="nav-submenu">
                         <li class="nav-sub-chamados"><a href="abertura-chamado.html">Abrir Chamado</a></li>
-                        <li class="nav-sub-chamados"><a href="#">Acompanhar Chamados</a></li>
+                        <li class="nav-sub-chamados"><a href="acompanhar-chamados.html">Acompanhar Chamados</a></li>
                     </ul>
                 </li>
-                <li class="nav-pag"><a href="sobre-nos.html">Sobre Nós</a></li>
-                <li class="nav-pag"><a href="ajuda.html">Ajuda</a></li>
-                <li class="nav-pag"><a href="#" id="logout-link">Sair</a></li>
+                <li class="nav-pag"><a href="sobre-nos.html" class="">Sobre Nós</a></li>
+                <li class="nav-pag"><a href="ajuda.html" class="">Ajuda</a></li>
+                <li class="nav-pag"><a href="#" class="">Sair</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="container">
-            <h1 class="titulo">Meus Chamados</h1>
+            <h1 class="titulo">GERENCIAR CHAMADOS</h1>
 
             <div id="chamados" class="chamados">
 
@@ -44,21 +42,18 @@
             <ul class="footer-lista">
                 <li><a href="inicio.html" class="footer-link">Inicio</a></li>
                 <li><a href="abertura-chamado.html" class="footer-link">Abrir Chamado</a></li>
-                <li><a href="#" class="footer-link">Acompanhar Chamados</a></li>
+                <li><a href="acompanhar-chamados.html" class="footer-link">Acompanhar Chamados</a></li>
                 <li><a href="ajuda.html" class="footer-link">Ajuda</a></li>
                 <li><a href="sobre-nos.html" class="footer-link">Sobre nós</a></li>
             </ul>
         </div>
-        
         <div id="footer-copyright">
             UniClass
             &#169
             2025 all rights reserved
         </div>
-
     </footer>
 
-  <script src="../scripts/acompanhar-chamados.js"></script>
-  <script src="../scripts/logout.js"></script>
+    <script src="../scripts/gerenciar-admin.js"></script>
 </body>
 </html>

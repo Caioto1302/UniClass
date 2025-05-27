@@ -18,7 +18,7 @@ export async function adminRotas(app: FastifyInstance) {
     rotasAdmin.addHook('preHandler', autenticar)
     rotasAdmin.addHook('preHandler', autenticarAdmin)
 
-    // PUT - Editar chamado
+    // PUT - Editar status do chamado
 
     rotasAdmin.put<{
       Body: { status: string }
@@ -33,7 +33,22 @@ export async function adminRotas(app: FastifyInstance) {
 
         const status = statusSchema.parse(request.body.status)
 
-        return reply.status(200).send(await atualizaChamado(idValido, status))
+        const chamado = await atualizaChamado(idValido, status)
+
+        const usuario = await buscaUsuario(chamado.usuarioId)
+
+        const link = `http://127.0.0.1:5501/front-end/pages/acompanhar-chamados.html`
+
+        await enviaEmail(
+          usuario.email,
+          `UNICLASS - CHAMADO COM TÍTULO "${chamado.titulo}" TEVE STATUS ALTERADO`,
+          `
+          <p>Seu chamado está sendo analisado, segue o link do acompanhamento:</p>
+          <a href="${link}">${link}</a>
+          `,
+        )
+
+        return reply.status(200).send(chamado)
       } catch (err) {
         if (err instanceof z.ZodError) {
           console.log(err)
@@ -116,7 +131,7 @@ export async function adminRotas(app: FastifyInstance) {
 
         await enviaEmail(
           usuario.email,
-          'UNICLASS - RECUPERAÇÃO DE SENHA',
+          `UNICLASS - CHAMADO COM TÍTULO "${chamadoRespondido?.titulo}" RESPONDIDO`,
           `
           <p>Seu chamado foi respondido, segue link do acompanhamento de chamados:</p>
           <a href="${link}">${link}</a>

@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abertura de Chamado</title>
+    <title>Edição de Chamado</title>
+    <link rel="stylesheet" href="../styles/editar-chamado.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../styles/abertura-chamado.css">
-    <script src="../scripts/proteger-pagina.js"></script>
+    <link rel="stylesheet" href="../styles/editar-admin.css">
+    <script src="../scripts/proteger-admin.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="inicio.html" class="nav-logo">UniClass</a>
-
+            <a href="#" class="nav-logo">UniClass</a>
+            
             <ul class="nav-menu">
                 <li class="nav-pag"><a href="gerenciar-admin.html">Gerenciamento (admin)</a></li>
                 <li class="nav-sub-item">
                     <a href="#" class="nav-chamados">Chamados <i class='bx bx-chevron-down arrow-down'></i></a>
                     <ul class="nav-submenu">
-                        <li class="nav-sub-chamados"><a href="#">Abrir Chamado</a></li>
+                        <li class="nav-sub-chamados"><a href="abertura-chamado.html">Abrir Chamado</a></li>
                         <li class="nav-sub-chamados"><a href="acompanhar-chamados.html">Acompanhar Chamados</a></li>
                     </ul>
                 </li>
@@ -31,46 +32,52 @@
 
     <main>
         <div class="container">
-            <form id="chamado-form">
-                <h1>ABRIR CHAMADO</h1>
+            <h1 class="titulo">Editar Chamado</h1>
+            <ul id="detalhes-chamado-lista"></ul>
 
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="titulo">Titulo do Chamado</label>
-                        <input id="titulo" type="text" name="titulo" placeholder="Digite o titulo" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="descricao">Descrição do Problema</label>
-                        <input id="descricao" type="text" name="descricao" placeholder="Digite o problema" required>
-                    </div>
+            <form id="form-status">
+                <label for="status">Status:</label>
+                <div class="status">
+                    <select id="status" name="status">
+                        <option value="Aberto">Aberto</option>
+                        <option value="EmAndamento">Em andamento</option>
+                        <option value="Concluido">Concluído</option>
+                    </select>
+                    <button type="submit">Alterar Status</button>
                 </div>
-                <button type="submit">Enviar</button>
-        </div>
+            </form>
 
-        </form> 
+            <h2 class="titulo">Respostas</h2>
+            <ul id="respostas-lista"></ul>
+
+            <form id="form-adicionar-resposta">
+                <label for="nova-resposta">Adicionar resposta:</label>
+                <div class="nova-resposta">
+                    <textarea id="nova-resposta" required></textarea>
+                    <button type="submit">Adicionar</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer>
         <div id="footer-conteudo">
             <ul class="footer-lista">
-                <li><a href="inicio.html" class="footer-link">Inicio</a></li>
-                <li><a href="#" class="footer-link">Abrir Chamado</a></li>
+                <li><a href="#" class="footer-link">Inicio</a></li>
+                <li><a href="abertura-chamado.html" class="footer-link">Abrir Chamado</a></li>
                 <li><a href="acompanhar-chamados.html" class="footer-link">Acompanhar Chamados</a></li>
                 <li><a href="ajuda.html" class="footer-link">Ajuda</a></li>
                 <li><a href="sobre-nos.html" class="footer-link">Sobre nós</a></li>
             </ul>
         </div>
-        
         <div id="footer-copyright">
             UniClass
             &#169
             2025 all rights reserved
         </div>
-
     </footer>
-    
-    <script src="../scripts/abertura-chamado.js"></script>
+
+    <script src="../scripts/editar-admin.js"></script>
     <script src="../scripts/logout.js"></script>
 </body>
 </html>

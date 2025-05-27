@@ -22,7 +22,16 @@ export async function autenticacaoRotas(app: FastifyInstance) {
 
       if (usuarioExistente) throw new Error('E-mail já cadastrado')
 
-      return reply.status(201).send(await criaUsuario(request))
+      const usuario = await criaUsuario(request)
+
+      await enviaEmail(
+        usuario.email,
+        'UNICLASS - BEM VINDO A UNICLASS',
+        `
+        <p>Aqui você resolve todos os seus probemas!</a>
+        `,
+      )
+      return reply.status(201).send(usuario)
     } catch (err) {
       if (err instanceof z.ZodError) {
         console.log(err)

@@ -58,7 +58,9 @@ export async function usuariosRotas(app: FastifyInstance) {
         try {
           const idValido = validaId(request.params.id)
 
-          return reply.status(200).send(await buscaChamado(idValido))
+          const chamado = await buscaChamado(idValido)
+
+          return reply.status(200).send(chamado)
         } catch (err) {
           if (err instanceof z.ZodError) {
             console.log(err)
@@ -89,7 +91,7 @@ export async function usuariosRotas(app: FastifyInstance) {
 
         const chamado = await criaChamado(request)
 
-        enviaEmail(
+        await enviaEmail(
           request.user.email,
           'UNICLASS - Seu chamado foi criado com sucesso!',
           `

@@ -20,7 +20,7 @@ document.querySelector('#chamado-form').addEventListener('submit', async (event)
 
     if (response.ok) {
       alert('Chamado aberto com sucesso!')
-      window.location.href = 'sobre-nos.html'
+      window.location.href = 'acompanhar-chamados.html'
     } else {
       const error = await response.json()
       alert(`Erro: ${error.message}`)

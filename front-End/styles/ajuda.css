@@ -7,16 +7,15 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background: #fff;
+html {
     height: 100%;
 }
 
-html {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
     height: 100%;
 }
 
@@ -38,7 +37,6 @@ main {
     letter-spacing: 0.5px;
     background-color: #D9D9D9;
 }
-
 .nav-logo {
     font-size: 20px;
     font-family: 'Beyonders', sans-serif;
@@ -78,8 +76,10 @@ main {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     margin-top: 0.3rem;
+    min-width: 180px;
     z-index: 100;
     padding: 0.5rem 0 0.5rem 0;
+    min-width: unset;
 }
 
 .nav-sub-item {
@@ -104,82 +104,63 @@ main {
     border-radius: 6px;
 }
 
-.nav-chamados .arrow-down {
-    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-    display: inline-block;
-    vertical-align: middle;
+.central-ajuda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1100px;
+    margin: 180px auto 0 auto;
+    padding: 60px 40px 60px 40px;
+    background: #D9D9D9;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    min-height: 35vh;
 }
 
-.nav-sub-item:hover .arrow-down {
-    transform: rotate(180deg);
+.central-ajuda h1 {
+    font-size: 55px;
 }
 
-.container {
-    width: 500px;
-    background-color: #D9D9D9;
-    border: 1px solid rgba(128, 128, 129, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(128, 128, 129, 0.2);
-    color: #000000;
-    border-radius: 16px;
-    padding: 35px;
-    margin-top: 250px;
-    margin-bottom: 65px;
-    font-weight: 900;
+.central-ajuda h1,
+.central-ajuda h2 {
+    text-align: center;
     font-family: 'Open Sauce One';
+    color: #050505;
+    margin-bottom: 30px;
 }
 
-.container h1 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 40px;
+.central-ajuda h3 {
+    color: #000000;
+    margin-bottom: 8px;
+    
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.name-fields {
-    display: flex;
-    gap: 20px;
+.central-ajuda section {
     width: 100%;
 }
 
-.name-fields .input-box {
-    flex: 1;               
+.about-introducao-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin: 24px 0;
+    box-shadow: none;
+    border: 1.5px solid #ececec;
+    border-radius: 14px;
+    background: #fff;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.input-box {
+.about-introducao-texto p {
+    padding-left: 10px;
+}
+
+.about-introducao {
     flex: 1;
-    min-width: 150px;
-}
-
-.input-box {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-    text-align: center;
-}
-
-.input-box input {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-}
-
-button {
-    width: 100%;
-    height: 45px;
-    background-color: rgba(128, 128, 129, 0.2);
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
+    text-align: left;
 }
 
 footer {
@@ -187,7 +168,7 @@ footer {
     width: 100%; 
     top: 0;
     left: 0;
-    margin-top: 4rem;
+    margin-top: 8rem;
     padding: 1rem 1.5rem;
     background-color: #D9D9D9;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -208,7 +189,7 @@ footer {
 }
 
 .footer-link:hover {
-    color: #7f37c9;
+    color: #000000;
 }
 
 #footer-copyright {
