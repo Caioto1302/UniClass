@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       const response = await fetch(
         `http://localhost:5000/chamado/${chamadoId}`,
         {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: {
+            Authorization: `Bearer ${token}`
+          },
         },
       )
       if (!response.ok) throw new Error('Erro ao buscar chamado')
