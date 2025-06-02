@@ -149,18 +149,11 @@ export async function autenticacaoRotas(app: FastifyInstance) {
 
         await redefineSenha(token, novaSenha)
 
-        await enviaEmail(
-          request.user.email,
-          'UNICLASS - REDEFINIÇÃO DE SENHA',
-          `
-          <p>Sua senha foi redefinida com sucesso!</a>
-          `,
-        )
-
         return reply
           .status(200)
           .send({ message: 'Senha redefinida com sucesso' })
       } catch (err) {
+        console.log(err)
         return reply.status(400).send({ message: 'Token inválido ou expirado' })
       }
     },
